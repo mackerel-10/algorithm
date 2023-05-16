@@ -1,6 +1,4 @@
 function solution(answers) {
-    
-    
     let students = [];
     students.push([1, 2, 3, 4, 5]); // 0
     students.push([2, 1, 2, 3, 2, 4, 2, 5]); // 1
