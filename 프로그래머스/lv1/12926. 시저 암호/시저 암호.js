@@ -1,24 +1,20 @@
 function solution(s, n) {
     let answer = '';
-    let newChar;
-    let min, max;
+    const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+    const upperCase = lowerCase.toUpperCase();
+    let index, charCase;
     
-    for (const index in s) {
-        if (s[index] !== ' ') {
-            let asciiNumber = s.charCodeAt(index);
-            
-            if (asciiNumber >= 97 && asciiNumber <= 122) {
-                [min, max] = [97, 122];
-            } else {
-                [min, max] = [65, 90];          
-            }
-            asciiNumber + n > max
-                ? newChar = (asciiNumber + n - 26)
-                : newChar = asciiNumber + n;
-            answer += String.fromCharCode(newChar);
-        } else {
-            answer += ' ';
+    for (const char of s) {
+        if (char === ' ') {
+            answer += char;
+            continue;
         }
+        
+        lowerCase.includes(char) === true
+            ? charCase = lowerCase
+            : charCase = upperCase;
+        index = charCase.indexOf(char)
+        answer += charCase[(index + n) % 26]
     }
     
     return answer;
