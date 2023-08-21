@@ -3,7 +3,7 @@ function solution(food) {
     
     for (let index = 1; index < food.length; index++) {
         let foodAmount = food[index];
-        let repeatAmount = foodAmount / 2;
+        let repeatAmount = Math.floor(foodAmount / 2);
         
         answer += String(index).repeat(repeatAmount);
         
