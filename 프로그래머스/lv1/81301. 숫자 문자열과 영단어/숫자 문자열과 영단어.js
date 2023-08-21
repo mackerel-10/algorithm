@@ -14,9 +14,7 @@ function solution(s) {
     };
     
     let combinedString = '';
-    for (let index = 0; index < s.length; index++) {
-        let value = s[index];
-        
+    for (const value of s) {
         if (Number.isInteger(Number(value))) {
             answer += value;
         } else {
