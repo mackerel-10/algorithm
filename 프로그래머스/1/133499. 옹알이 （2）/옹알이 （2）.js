@@ -7,10 +7,6 @@ function solution(babbling) {
         let correctLength = 0;
         let history = [];
         
-        if (word.length === 1) {
-            continue;
-        }
-        
         for (let index = 0; index < word.length; index++) {
             temp += word[index]; // 한글자씩 temp에 추가
             
