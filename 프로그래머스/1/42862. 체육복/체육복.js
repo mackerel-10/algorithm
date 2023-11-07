@@ -4,6 +4,7 @@ function solution(n, lost, reserve) {
     lost.sort((student1, student2) => student1 - student2);
     reserve.sort((reserve1, reserve2) => reserve1 - reserve2);
     
+    // lost, reserve 중복 학생 제거
     for (let i = 0; i < lost.length; i++) {
         for (let j = 0; j < reserve.length; j++) {
             if (lost[i] === reserve[j]) {
@@ -17,6 +18,7 @@ function solution(n, lost, reserve) {
     
     // console.log(lost, reserve);
     
+    // 최대 학생 수 계산
     for (const lostStudent of lost) {
         if (lostStudent === -1) continue;
         for (let i = 0; i < reserve.length; i++) {
